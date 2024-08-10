@@ -1,0 +1,75 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Eligibility Checker</title>
+    <link rel="stylesheet" href='/static/index.css' />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Job Eligibility Checker</h1>
+        <form id="eligibilityForm" method="post" action="/predict">
+            <label for="cgpa">Enter your CGPA:</label>
+            <input type="number" id="cgpa" name="cgpa" step="0.01" min="0" max="10" required>
+            
+            <label for="iq">Enter your IQ:</label>
+            <input type="number" id="iq" name="iq" min="0" max="200" required>
+            
+            <button type="button" name='click' onclick="predict()">Check Eligibility</button>
+        </form>
+        <div id="result"></div>
+    </div>
+<script>
+    function predict()
+    {
+    var form = document.getElementById("eligibilityForm");
+    form.submit();
+    }
+</script>
+
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Eligibility Checker</title>
+    <link rel="stylesheet" href='/static/index.css' />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap">
+</head>
+<body>
+    <div class="container">
+        <h1>Job Eligibility Checker</h1>
+        <form id="eligibilityForm" method="post" action="/predict">
+            <label for="cgpa">Enter your CGPA:</label>
+            <input type="number" id="cgpa" name="cgpa" step="0.01" min="0" max="10" required>
+
+            <label for="iq">Enter your IQ:</label>
+            <input type="number" id="iq" name="iq" min="0" max="200" required>
+
+            <button type="button" name='click' onclick="validateAndSubmit()">Check Eligibility</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function validateAndSubmit() {
+            var cgpa = document.getElementById("cgpa").value;
+
+            // Check if CGPA is greater than 10
+            if (cgpa > 10) {
+                alert("CGPA must be under 10.00 and greater than 0.0");
+                return false; // Prevent the form from submitting
+            }
+
+            var form = document.getElementById("eligibilityForm");
+            form.submit(); // Submit the form if validation passes
+        }
+    </script>
+</body>
+</html>
+
